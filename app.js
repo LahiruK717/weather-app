@@ -1,6 +1,9 @@
 window.addEventListener("load", () => {
   let long;
   let lat;
+  let temperatureDesctiption = document.querySelector(".temperature-description");
+  let temperatureDegree = document.querySelector(".temperature-degree");
+  let locationTimezone = document.querySelector(".location-timezone");
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -16,6 +19,10 @@ window.addEventListener("load", () => {
         })
         .then(data => {
           const { temperature, summary } = data.currently;
+
+          temperatureDegree.textContent = temperature;
+          temperatureDesctiption.textContent = summary;
+          locationTimezone.textContent = data.timezone;
         });
     });
   }
