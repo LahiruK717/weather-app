@@ -4,6 +4,8 @@ window.addEventListener("load", () => {
   let temperatureDesctiption = document.querySelector(".temperature-description");
   let temperatureDegree = document.querySelector(".temperature-degree");
   let locationTimezone = document.querySelector(".location-timezone");
+  let temperatureSection = document.querySelector(".temperature");
+  let temperatureSpan = document.querySelector(".temperature span");
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -20,13 +22,23 @@ window.addEventListener("load", () => {
         .then(data => {
           const { temperature, summary, icon } = data.currently;
 
-          temperatureDegree.textContent = temperature;
+          temperatureDegree.textContent = Math.round(temperature);
           temperatureDesctiption.textContent = summary;
           locationTimezone.textContent = data.timezone;
           setIcon(icon, document.querySelector(".icon"));
         });
     });
   }
+
+  temperatureSection.addEventListener("click", () => {
+    if (temperatureSpan.textContent == "F") {
+      temperatureSpan.textContent = "C";
+      temperatureDegree.textContent = Math.round((temperatureDegree.textContent - 32) * (5 / 9));
+    } else {
+      temperatureSpan.textContent = "F";
+      temperatureDegree.textContent = Math.round((temperatureDegree.textContent * 9) / 5 + 32);
+    }
+  });
 
   function setIcon(icon, iconId) {
     const skycons = new Skycons({ color: "white" });
