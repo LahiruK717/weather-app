@@ -18,12 +18,20 @@ window.addEventListener("load", () => {
           return response.json();
         })
         .then(data => {
-          const { temperature, summary } = data.currently;
+          const { temperature, summary, icon } = data.currently;
 
           temperatureDegree.textContent = temperature;
           temperatureDesctiption.textContent = summary;
           locationTimezone.textContent = data.timezone;
+          setIcon(icon, document.querySelector(".icon"));
         });
     });
+  }
+
+  function setIcon(icon, iconId) {
+    const skycons = new Skycons({ color: "white" });
+    const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+    skycons.play();
+    return skycons.set(iconId, Skycons[currentIcon]);
   }
 });
