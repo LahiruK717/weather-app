@@ -42,6 +42,7 @@ window.addEventListener('load', () => {
 	})
 
 
+	// commit 2
 	// commit 3
 	// commit 4
 	function setIcon(icon, iconId) {
