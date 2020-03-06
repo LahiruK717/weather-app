@@ -31,11 +31,9 @@ window.addEventListener('load', () => {
 	}
 
 	// comment 1
-<<<<<<< HEAD
 	// comment 2
-=======
 	// comment 1.1
->>>>>>> ecbe0503e8d21697e9139c66f27de02600c038aa
+	// comment 7
 	temperatureSection.addEventListener('click', () => {
 		if (temperatureSpan.textContent == 'F') {
 			temperatureSpan.textContent = 'C'
@@ -47,14 +45,12 @@ window.addEventListener('load', () => {
 	})
 
 
-<<<<<<< HEAD
 	// commit 2
-=======
 	// comment 1
->>>>>>> ecbe0503e8d21697e9139c66f27de02600c038aa
 	// commit 3
 	// commit 4
 	// commit 5
+	// comment 7
 	function setIcon(icon, iconId) {
 		const skycons = new Skycons({ color: 'white' })
 		const currentIcon = icon.replace(/-/g, '_').toUpperCase()
