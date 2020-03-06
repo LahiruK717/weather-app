@@ -41,7 +41,9 @@ window.addEventListener('load', () => {
 		}
 	})
 
+
 	// commit 3
+	// commit 4
 	function setIcon(icon, iconId) {
 		const skycons = new Skycons({ color: 'white' })
 		const currentIcon = icon.replace(/-/g, '_').toUpperCase()
