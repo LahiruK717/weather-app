@@ -31,6 +31,7 @@ window.addEventListener('load', () => {
 	}
 
 	// comment 1
+	// comment 2
 	temperatureSection.addEventListener('click', () => {
 		if (temperatureSpan.textContent == 'F') {
 			temperatureSpan.textContent = 'C'
